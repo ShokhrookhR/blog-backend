@@ -22,7 +22,7 @@ export const create = async (req, res) => {
 export const getAll = async (req, res) => {
   const postId=req.postId
 	try {
-	  const posts =  await CommentModel.find({"post":postId}).populate('post','user').exec();
+	  const posts = await CommentModel.find({ post: postId }).populate('user', 'post').exec();
 	  res.json(posts);
 	} catch (error) {
 	  console.log(error);
