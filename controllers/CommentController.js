@@ -20,18 +20,18 @@ export const create = async (req, res) => {
   }
 };
 export const getAll = async (req, res) => {
-  const postId = req.body.postId;
-	try {
-	  const posts = await CommentModel.find({ post: postId })
+  const postId = req.params.id;
+  try {
+    const comments = await CommentModel.find({ post: postId })
       .populate('user')
       .populate('post')
       .exec();
-	  res.json(posts);
-	} catch (error) {
-	  console.log(error);
-	  return res.status(500).json({
-		 message: 'Не удалось найти комментарии',
-	  });
-	}
+    res.json(comments);
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      message: 'Не удалось найти комментарии',
+    });
+  }
  };
 
