@@ -71,7 +71,7 @@ app.patch('/posts/:id', checkMe, postValidation, handleValidationsErrors, PostCo
 app.get('/tags', PostController.lastTags);
 
 app.post('/comments', checkMe,checkPost, commentValidation, handleValidationsErrors, CommentController.create);
-app.get('/comments',checkPost, CommentController.getAll);
+app.get('/comments', CommentController.getAll);
 
 
 app.post('/upload', checkMe, upload.single('image'), (req, res) => {

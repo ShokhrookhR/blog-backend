@@ -20,7 +20,7 @@ export const create = async (req, res) => {
   }
 };
 export const getAll = async (req, res) => {
-  const postId=req.postId
+  const postId = req.body.postId;
 	try {
 	  const posts = await CommentModel.find({ post: postId })
       .populate('user')
