@@ -73,7 +73,6 @@ app.get('/tags', PostController.lastTags);
 app.post('/comments', checkMe,checkPost, commentValidation, handleValidationsErrors, CommentController.create);
 app.get('/comments/:id', CommentController.getByPostId);
 app.get('/comments', CommentController.getAll);
-app.get('/comments', CommentController.getLastComments);
 
 
 app.post('/upload', checkMe, upload.single('image'), (req, res) => {
