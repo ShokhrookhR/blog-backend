@@ -18,5 +18,5 @@ export const postValidation = [
   body('avatarUrl').optional().isString(),
 ];
 export const commentValidation = [
-  body('text', 'Текст должен состоять минимум из 5 символов').isLength({ min: 5 }).isString(),
+  body('text', 'Текст должен состоять минимум из 1 символа').isLength({ min: 1 }).isString(),
 ];

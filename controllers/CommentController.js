@@ -56,4 +56,14 @@ export const getLastComments = async (req, res) => {
     });
   }
 };
-
+// export const removeCommentsOfPost = async (req, res) => {
+//   try {
+//     await CommentModel.findByIdAndRemove();
+//     res.json({ success: true });
+//   } catch (error) {
+//     console.log(error);
+//     return res.status(500).json({
+//       message: 'Не удалось найти комментарии',
+//     });
+//   }
+// };
