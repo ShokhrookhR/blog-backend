@@ -107,6 +107,7 @@ export const update = async (req, res) => {
         text: req.body.text,
         tags: req.body.tags.split(','),
         user: req.userId,
+        imageUrl: req.body.imageUrl,
       },
     );
     res.json({ success: true });
