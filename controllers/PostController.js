@@ -120,7 +120,10 @@ export const update = async (req, res) => {
 export const lastTags = async (req, res) => {
   try {
     const posts = await PostModel.find().limit(5).exec();
-    const tags = posts.map((post) => post.tags.flat().slice(0, 5));
+    const tags = posts
+      .map((post) => post.tags)
+      .flat()
+      .slice(0, 5);
     res.json(tags);
   } catch (error) {
     return res.status(500).json({
